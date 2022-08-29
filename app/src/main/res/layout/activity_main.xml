@@ -33,65 +33,6 @@
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/top_background_main_menu" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/red_block" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/orange_block" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/green_block" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/lite_blue_block" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/purple_block" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/pink_block" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

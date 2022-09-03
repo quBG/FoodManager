@@ -36,6 +36,7 @@
                 app:srcCompat="@drawable/top_background_main_menu" />
 
             <RelativeLayout
+                android:onClick="toMyFridge"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"
@@ -43,6 +44,7 @@
                 android:layout_marginRight="18dp"
                 android:layout_marginBottom="12dp"
                 android:background="#EA8C8C"
+                android:clickable="false"
                 android:padding="15dp">
 
                 <ImageView
@@ -87,6 +89,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:onClick="toCategories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
@@ -138,6 +141,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:onClick="toSearch"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"
@@ -189,6 +193,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:onClick="toRandomRecipe"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"
@@ -240,6 +245,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:onClick="toStory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"
@@ -291,6 +297,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:onClick="toStatistics"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"

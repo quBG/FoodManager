@@ -14,25 +14,22 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".statistics"
+            android:name=".pages.categories"
             android:exported="false" />
         <activity
-            android:name=".story"
+            android:name=".pages.story"
             android:exported="false" />
         <activity
-            android:name=".random_recipe"
+            android:name=".pages.statistics"
             android:exported="false" />
         <activity
-            android:name=".search"
+            android:name=".pages.random_recipe"
             android:exported="false" />
         <activity
-            android:name=".categories"
+            android:name=".pages.search"
             android:exported="false" />
         <activity
-            android:name=".my_fridge"
-            android:exported="false" />
-        <activity
-            android:name=".pages.MyFridgePage"
+            android:name=".pages.my_fridge"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

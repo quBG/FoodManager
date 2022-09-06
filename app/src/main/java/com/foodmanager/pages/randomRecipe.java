@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.foodmanager.R;
 
-public class random_recipe extends AppCompatActivity {
+public class randomRecipe extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

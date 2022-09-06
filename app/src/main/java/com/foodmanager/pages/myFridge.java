@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.foodmanager.R;
 
-public class my_fridge extends AppCompatActivity {
+public class myFridge extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

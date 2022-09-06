@@ -23,13 +23,13 @@
             android:name=".pages.statistics"
             android:exported="false" />
         <activity
-            android:name=".pages.random_recipe"
+            android:name=".pages.randomRecipe"
             android:exported="false" />
         <activity
             android:name=".pages.search"
             android:exported="false" />
         <activity
-            android:name=".pages.my_fridge"
+            android:name=".pages.myFridge"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toMyFridge(View view) {
-        Intent intent = new Intent(this, my_fridge.class);
+        Intent intent = new Intent(this, myFridge.class);
         startActivity(intent);
     }
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toRandomRecipe(View view) {
-        Intent intent = new Intent(this, random_recipe.class);
+        Intent intent = new Intent(this, randomRecipe.class);
         startActivity(intent);
     }
 

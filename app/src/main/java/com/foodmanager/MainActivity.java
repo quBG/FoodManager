@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.foodmanager.pages.*;
+import com.foodmanager.recipes.connection.Connector;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Connector connector = new Connector();
     }
 
     public void toMyFridge(View view) {

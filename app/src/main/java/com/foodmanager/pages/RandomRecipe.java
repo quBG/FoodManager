@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.foodmanager.R;
 
-public class search extends AppCompatActivity {
+public class RandomRecipe extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_random_recipe);
     }
 }

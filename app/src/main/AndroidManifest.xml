@@ -17,22 +17,22 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".pages.categories"
+            android:name=".pages.Categories"
             android:exported="false" />
         <activity
-            android:name=".pages.story"
+            android:name=".pages.Story"
             android:exported="false" />
         <activity
-            android:name=".pages.statistics"
+            android:name=".pages.Statistics"
             android:exported="false" />
         <activity
-            android:name=".pages.randomRecipe"
+            android:name=".pages.RandomRecipe"
             android:exported="false" />
         <activity
-            android:name=".pages.search"
+            android:name=".pages.Search"
             android:exported="false" />
         <activity
-            android:name=".pages.myFridge"
+            android:name=".pages.MyFridge"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

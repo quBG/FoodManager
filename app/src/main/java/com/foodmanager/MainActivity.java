@@ -9,8 +9,6 @@ import android.view.View;
 import com.foodmanager.pages.*;
 import com.foodmanager.recipes.connection.Connector;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,32 +18,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toMyFridge(View view) {
-        Intent intent = new Intent(this, myFridge.class);
+        Intent intent = new Intent(this, MyFridge.class);
         startActivity(intent);
     }
 
     public void toCategories(View view) {
-        Intent intent = new Intent(this, categories.class);
+        Intent intent = new Intent(this, Categories.class);
         startActivity(intent);
     }
 
     public void toSearch(View view) {
-        Intent intent = new Intent(this, search.class);
+        Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }
 
     public void toRandomRecipe(View view) {
-        Intent intent = new Intent(this, randomRecipe.class);
+        Intent intent = new Intent(this, RandomRecipe.class);
         startActivity(intent);
     }
 
     public void toStory(View view) {
-        Intent intent = new Intent(this, story.class);
+        Intent intent = new Intent(this, Story.class);
         startActivity(intent);
     }
 
     public void toStatistics(View view) {
-        Intent intent = new Intent(this, statistics.class);
+        Intent intent = new Intent(this, Statistics.class);
         startActivity(intent);
     }
 }

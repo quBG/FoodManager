@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.foodmanager.R;
 
-public class story extends AppCompatActivity {
+public class Categories extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_story);
+        setContentView(R.layout.activity_categories);
     }
 }

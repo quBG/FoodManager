@@ -35,7 +35,7 @@ public class StorageSerializer extends Serializer {
     public void deleteFile() {
         try {
             file.close();
-            File temp = new File(path, fileName);
+            File temp = new File(path, getFileName());
             temp.delete();
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,8 +45,8 @@ public class StorageSerializer extends Serializer {
     @Override
     public void serialize(Object object) {
         try {
-            if (fileName != null) {
-                file = new ObjectOutputStream(new FileOutputStream(path + fileName));
+            if (getFileName() != null) {
+                file = new ObjectOutputStream(new FileOutputStream(path + getFileName()));
                 file.writeObject(object);
                 file.close();
             }
@@ -59,9 +59,9 @@ public class StorageSerializer extends Serializer {
     @Override
     public Object deserialize() {
         try {
-            if (fileName != null) {
+            if (getFileName() != null) {
                 ObjectInputStream stream = new ObjectInputStream(new FileInputStream(
-                        path + fileName));
+                        path + getFileName()));
                 return stream.read();
             }
         } catch (IOException exception) {

@@ -1,13 +1,29 @@
 package com.foodmanager.recipes.storage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class StorageSerializer extends Serializer {
+    private ObjectOutputStream file;
     private String fileName;
+    private String path = "C:\\Users\\Username\\Desktop\\";
 
     @Override
     public String getFileName() {
-        return fileName;
+        try {
+            if (fileName != null)
+                return fileName;
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            throw new NullPointerException();
+        }
+        return null;
     }
 
     @Override
@@ -17,16 +33,41 @@ public class StorageSerializer extends Serializer {
 
     @Override
     public void deleteFile() {
-
+        try {
+            file.close();
+            File temp = new File(path, fileName);
+            temp.delete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public Boolean serialize(Object object) {
-        return null;
+    public void serialize(Object object) {
+        try {
+            if (fileName != null) {
+                file = new ObjectOutputStream(new FileOutputStream(path + fileName));
+                file.writeObject(object);
+                file.close();
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            throw new NullPointerException("name is not set on serialization");
+        }
     }
 
     @Override
-    public ObjectInputStream deserialize() {
+    public Object deserialize() {
+        try {
+            if (fileName != null) {
+                ObjectInputStream stream = new ObjectInputStream(new FileInputStream(
+                        path + fileName));
+                return stream.read();
+            }
+        } catch (IOException exception) {
+            exception.printStackTrace();
+            throw new NullPointerException("name is not set on serialization");
+        }
         return null;
     }
 }

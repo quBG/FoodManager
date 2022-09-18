@@ -6,7 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Connector {
-    private StringBuilder request(String link){
+    public StringBuilder request(String link){
         StringBuilder result = new StringBuilder();
         Thread thread = new Thread(() -> {
             try {

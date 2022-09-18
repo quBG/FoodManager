@@ -5,6 +5,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 public abstract class Serializer implements Serializable {
+    public abstract String getPath();
     public abstract String getFileName();
     public abstract void setFileName(String name);
     public abstract void deleteFile();

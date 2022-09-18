@@ -12,7 +12,7 @@ import java.io.ObjectOutputStream;
 public class StorageSerializer extends Serializer {
     private ObjectOutputStream file;
     private String fileName;
-    private String path = "C:\\Users\\Username\\Desktop\\";
+    private final String path = "C:\\Users\\Username\\Desktop\\";
 
     @Override
     public String getFileName() {
@@ -24,6 +24,10 @@ public class StorageSerializer extends Serializer {
             throw new NullPointerException();
         }
         return null;
+    }
+
+    public String getPath() {
+        return path;
     }
 
     @Override

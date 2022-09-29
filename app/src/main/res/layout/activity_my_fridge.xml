@@ -6,39 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".pages.MyFridge">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="412dp"
-        android:layout_height="101dp"
-        android:paddingLeft="14dp"
-        android:paddingRight="14dp"
-        android:paddingBottom="71dp"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="5dp"
-            app:srcCompat="@drawable/plus" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
-            android:autoSizeMaxTextSize="100sp"
-            android:autoSizeMinTextSize="12sp"
-            android:autoSizeStepGranularity="2sp"
-            android:autoSizeTextType="uniform"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:shadowColor="#585858"
-            android:text="Продукты"
-            android:textColor="#585858" />
-    </RelativeLayout>
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -104,31 +71,51 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="82dp"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView5"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:shadowColor="#585858"
+            android:text="Продукты"
+            android:textColor="#585858" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:adjustViewBounds="true"
             app:srcCompat="@drawable/green_button" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="23dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="23dp"
-            android:autoSizeMaxTextSize="100sp"
+            android:layout_marginTop="35dp"
+            android:autoSizeMaxTextSize="25sp"
             android:autoSizeMinTextSize="12sp"
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"

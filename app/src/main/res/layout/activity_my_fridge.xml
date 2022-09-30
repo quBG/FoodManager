@@ -41,6 +41,7 @@
                     app:srcCompat="@drawable/red_bar" />
 
                 <ImageView
+                    android:onClick="backButton"
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="38dp"

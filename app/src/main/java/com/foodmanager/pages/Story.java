@@ -9,7 +9,7 @@ import android.view.View;
 import com.foodmanager.MainActivity;
 import com.foodmanager.R;
 
-public class Story extends AppCompatActivity implements TempPage {
+public class Story extends AppCompatActivity implements Temp {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,6 @@ public class Story extends AppCompatActivity implements TempPage {
 
     @Override
     public void backButton(View view) {
-        finish();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        onBackPressed();
     }
 }

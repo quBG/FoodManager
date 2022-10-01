@@ -16,12 +16,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void backButton(){
-        finish();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
     public void toMyFridge(View view) {
         Intent intent = new Intent(this, MyFridge.class);
         startActivity(intent);

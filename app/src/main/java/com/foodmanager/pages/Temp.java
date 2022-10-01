@@ -2,6 +2,6 @@ package com.foodmanager.pages;
 
 import android.view.View;
 
-public interface TempPage {
+public interface Temp {
     void backButton(View view);
 }

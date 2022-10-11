@@ -2,4 +2,6 @@
     <string name="app_name">FoodManager</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="descriptionMyFridge">Подобрать рецепты на основе содержимого вашего холодильника</string>
+    <string name="myFridgeFrameName">Мой холодильник</string>
 </resources>

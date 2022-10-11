@@ -4,22 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="0"
-    android:paddingTop="-90dp"
     tools:context=".MainActivity">
 
     <ScrollView
-        android:scrollbars="none"
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fadeScrollbars="false"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -35,319 +32,59 @@
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/top_background_main_menu" />
 
-            <RelativeLayout
-                android:onClick="toMyFridge"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="#EA8C8C"
-                android:clickable="false"
-                android:padding="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="55dp"
-                    android:layout_height="125dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/fridge" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="261dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Мой холодильник"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="261dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="40dp"
-                    android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="10sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Подобрать рецепты на основе содержимого вашего холодильника"
-                    android:textColor="@color/white" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:onClick="toCategories"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="#E5BA7A"
-                android:padding="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="68dp"
-                    android:layout_height="125dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/mix" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="26dp">
 
                 <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="261dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Категории"
-                    android:textColor="@color/white" />
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/myFridgeFrameName"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="15sp"
+                    app:autoSizeTextType="uniform" />
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="261dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="35dp"
-                    android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="10sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Выбор нужного рецепта за категорией"
-                    android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-            </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="120dp"
+                        android:maxHeight="120dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/fridge" />
 
-            <RelativeLayout
-                android:onClick="toSearch"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="#B6E078"
-                android:padding="15dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/descriptionMyFridge"
+                        app:autoSizeMaxTextSize="21sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeTextType="uniform" />
 
-                <ImageView
-                    android:id="@+id/imageView14"
-                    android:layout_width="65dp"
-                    android:layout_height="125dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/pepper" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="261dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Поиск"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="261dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="40dp"
-                    android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="10sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Найдите желаемый рецепт за названием или главным продуктом "
-                    android:textColor="@color/white" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:onClick="toRandomRecipe"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="#83DAD3"
-                android:padding="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView19"
-                    android:layout_width="65dp"
-                    android:layout_height="125dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/pan" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="261dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Случайный рецепт"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="261dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="35dp"
-                    android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="10sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Получите абсолютно случайный рецепт"
-                    android:textColor="@color/white" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:onClick="toStory"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="#B8A3F5"
-                android:padding="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView18"
-                    android:layout_width="55dp"
-                    android:layout_height="125dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/clock" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="261dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="История"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="261dp"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="30dp"
-                    android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="10sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="История приготовленых блюд"
-                    android:textColor="@color/white" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:onClick="toStatistics"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="#F4ACF0"
-                android:padding="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView20"
-                    android:layout_width="55dp"
-                    android:layout_height="125dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/box" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="261dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeMinTextSize="12sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Статистика"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="261dp"
-                    android:layout_height="65dp"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="35dp"
-                    android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="10sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Статистика по приготовленной еде.  Также её калорийность"
-                    android:textColor="@color/white" />
-
-            </RelativeLayout>
-
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

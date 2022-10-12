@@ -32,13 +32,16 @@
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/top_background_main_menu" />
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
                 android:background="@drawable/rectangle"
                 android:gravity="center_horizontal"
+                android:onClick="toMyFridge"
                 android:orientation="vertical"
                 android:paddingLeft="20dp"
                 android:paddingTop="12dp"
@@ -66,8 +69,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="120dp"
-                        android:maxHeight="120dp"
+                        android:maxWidth="90dp"
+                        android:maxHeight="90dp"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/fridge" />
 
@@ -81,10 +84,280 @@
                         app:autoSizeMaxTextSize="21sp"
                         app:autoSizeMinTextSize="12sp"
                         app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center_horizontal"
+                android:onClick="toCategories"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="26dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/categoriesFrameName"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="15sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="85dp"
+                        android:maxHeight="85dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/mix" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/descriptionCategories"
+                        app:autoSizeMaxTextSize="21sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeTextType="uniform" />
 
                 </LinearLayout>
-
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center_horizontal"
+                android:onClick="toSearch"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="26dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/searchFrameName"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="15sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="85dp"
+                        android:maxHeight="85dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/pepper" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/descriptionSearch"
+                        app:autoSizeMaxTextSize="21sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center_horizontal"
+                android:onClick="toRandomRecipe"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="26dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/randomRecipeFrameName"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="15sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="85dp"
+                        android:maxHeight="85dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/pan" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/descriptionRandomRecipe"
+                        app:autoSizeMaxTextSize="21sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center_horizontal"
+                android:onClick="toStory"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="26dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/storyFrameName"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="15sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="85dp"
+                        android:maxHeight="85dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/clock" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/descriptionStory"
+                        app:autoSizeMaxTextSize="21sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/rectangle"
+                android:gravity="center_horizontal"
+                android:onClick="toStatistics"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="26dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/statisticsFrameName"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="15sp"
+                    app:autoSizeTextType="uniform" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="85dp"
+                        android:maxHeight="85dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/box" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/descriptionStatistics"
+                        app:autoSizeMaxTextSize="21sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

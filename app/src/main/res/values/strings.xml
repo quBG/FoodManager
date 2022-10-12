@@ -4,4 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="descriptionMyFridge">Подобрать рецепты на основе содержимого вашего холодильника</string>
     <string name="myFridgeFrameName">Мой холодильник</string>
+    <string name="categoriesFrameName">Категории</string>
+    <string name="descriptionCategories">Выбор нужного рецепта за категорией</string>
+    <string name="searchFrameName">Поиск</string>
+    <string name="descriptionSearch">Найдите желаемый рецепт за названием или главным продуктом</string>
+    <string name="randomRecipeFrameName">Случайный рецепт</string>
+    <string name="descriptionRandomRecipe">Получите абсолютно случайный рецепт</string>
+    <string name="storyFrameName">История</string>
+    <string name="descriptionStory">История приготовленых блюд</string>
+    <string name="statisticsFrameName">Статистика</string>
+    <string name="descriptionStatistics">Статистика по приготовлению еды, подсчет калорий</string>
 </resources>

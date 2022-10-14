@@ -7,16 +7,11 @@ import android.view.View;
 
 import com.foodmanager.R;
 
-public class Recipes extends AppCompatActivity implements Temp {
+public class Recipes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
-    }
-
-    @Override
-    public void backButton(View view) {
-        onBackPressed();
     }
 }

@@ -9,16 +9,11 @@ import android.view.View;
 import com.foodmanager.MainActivity;
 import com.foodmanager.R;
 
-public class RandomRecipe extends AppCompatActivity implements Temp {
+public class RandomRecipe extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_recipe);
-    }
-
-    @Override
-    public void backButton(View view) {
-        onBackPressed();
     }
 }

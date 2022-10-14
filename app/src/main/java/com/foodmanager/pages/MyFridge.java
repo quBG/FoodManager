@@ -2,26 +2,28 @@ package com.foodmanager.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 
 import com.foodmanager.R;
 
-public class MyFridge extends AppCompatActivity implements Temp {
+import java.util.Objects;
+
+public class MyFridge extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_fridge);
-    }
-
-    public void outputOfProducts(View view) {
-        Intent intent = new Intent(this, Recipes.class);
-        startActivity(intent);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.myFridgeFrameName);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
-    public void backButton(View view) {
-        onBackPressed();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

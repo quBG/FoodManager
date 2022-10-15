@@ -7,9 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cross">#9E9E9E</color>
-    <color name="circle_for_cross">#EAEAEA</color>
-    <color name="button_select_products">#DBDBDB</color>
-    <color name="stroke_circle_add">#00AEAEAE</color>
-    <color name="button_select_products_text">#464646</color>
+    <color name="cross">#5D5D5D</color>
+    <color name="circle_for_cross">#00494949</color>
+    <color name="button_select_products">#404040</color>
+    <color name="stroke_circle_add">#464646</color>
+    <color name="button_select_products_text">#FFFFFFFF</color>
 </resources>

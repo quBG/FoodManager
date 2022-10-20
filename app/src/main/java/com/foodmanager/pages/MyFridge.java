@@ -2,13 +2,15 @@ package com.foodmanager.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewStub;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +20,8 @@ import java.util.Objects;
 
 public class MyFridge extends AppCompatActivity {
     private LinearLayout listItem;
+    private Dialog addingProduct;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,7 @@ public class MyFridge extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.myFridgeFrameName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listItem = findViewById(R.id.listItem);
+        addingProduct = new Dialog(this);
 
         final Button buttonSelect = findViewById(R.id.selectProducts);
         buttonSelect.setOnClickListener(view -> {
@@ -47,10 +52,19 @@ public class MyFridge extends AppCompatActivity {
     }
 
     private void showMenu() {
-        //код который добавляет показывает меню которое мы создадим
+        addingProduct.setContentView(R.layout.popup_menu_adding_product);
+        addingProduct.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        EditText text = addingProduct.findViewById(R.id.productName);
+
+        Button apply = addingProduct.findViewById(R.id.applyName);
+        apply.setOnClickListener((view) -> {
+            String productName = text.getText().toString();
+            buildElement(productName);
+        });
     }
 
-    private void buildElement() {
+    private void buildElement(String name) {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams

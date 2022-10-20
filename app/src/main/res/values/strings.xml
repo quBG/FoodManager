@@ -13,4 +13,6 @@
     <string name="statisticsFrameName">Статистика</string>
     <string name="descriptionStatistics">Статистика по приготовлению еды, подсчет калорий</string>
     <string name="findProducts">Найти рецепты</string>
+    <string name="add">Добавить</string>
+    <string name="writeProductName">Введите название продукта</string>
 </resources>

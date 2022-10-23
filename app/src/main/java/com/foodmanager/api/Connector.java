@@ -14,14 +14,23 @@ public class Connector {
                 final HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 con.setRequestMethod("GET");
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
-                    for (String line; (line = reader.readLine()) != null; )
+                    for (String line; (line = reader.readLine()) != null; ) {
                         result.append(line);
+                    }
                 }
             } catch (Exception exception){
                 exception.printStackTrace();
             }
         });
+
         thread.start();
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return result;
     }
 }

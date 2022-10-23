@@ -2,11 +2,13 @@ package com.foodmanager.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,12 +17,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.foodmanager.R;
+import com.foodmanager.recipes.loaders.ProductsLoader;
 
 import java.util.Objects;
 
 public class MyFridge extends AppCompatActivity {
     private LinearLayout listItem;
-    private Dialog addingProduct;
+    private Dialog dialogAdding;
+    private final ProductsLoader productLoader = new ProductsLoader();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +33,7 @@ public class MyFridge extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.myFridgeFrameName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listItem = findViewById(R.id.listItem);
-        addingProduct = new Dialog(this);
+        dialogAdding = createDialog();
 
         final Button buttonSelect = findViewById(R.id.selectProducts);
         buttonSelect.setOnClickListener(view -> {
@@ -51,19 +55,29 @@ public class MyFridge extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private Dialog createDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.popup_menu_adding_product, null));
+        return builder.create();
+    }
+
     private void showMenu() {
-        addingProduct.setContentView(R.layout.popup_menu_adding_product);
-        addingProduct.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogAdding.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogAdding.show();
 
-        EditText text = addingProduct.findViewById(R.id.productName);
-
-        Button apply = addingProduct.findViewById(R.id.applyName);
+        Button apply = dialogAdding.findViewById(R.id.applyName);
         apply.setOnClickListener((view) -> {
-            String productName = text.getText().toString();
-            buildElement(productName);
+            EditText text = dialogAdding.findViewById(R.id.productName);
+            String name = text.getText().toString();
+            productLoader.createProduct(name);
+            dialogAdding.hide();
         });
     }
 
+    /*
+        Show element
+    */
     private void buildElement(String name) {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -75,9 +89,9 @@ public class MyFridge extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setBackgroundColor(0xffe8eaf6);
         textView.setTextColor(0xff5c6bc0);
-        textView.setAllCaps(true);
         textView.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
-        textView.setText("Hello Android!");
+        textView.setText(name);
+
         linearLayout.addView(textView);
         listItem.addView(linearLayout);
     }

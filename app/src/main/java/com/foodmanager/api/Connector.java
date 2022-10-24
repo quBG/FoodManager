@@ -6,7 +6,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Connector {
-    public StringBuilder request(String link){
+
+    /**
+     * @param link api url, documentation https://developer.edamam.com
+     * @return String that can be converted to a JSONArray.
+    * */
+    public String request(String link){
         StringBuilder result = new StringBuilder();
         Thread thread = new Thread(() -> {
             try {
@@ -31,6 +36,6 @@ public class Connector {
             e.printStackTrace();
         }
 
-        return result;
+        return result.toString();
     }
 }

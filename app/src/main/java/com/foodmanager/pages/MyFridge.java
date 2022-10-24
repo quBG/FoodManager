@@ -70,8 +70,10 @@ public class MyFridge extends AppCompatActivity {
         apply.setOnClickListener((view) -> {
             EditText text = dialogAdding.findViewById(R.id.productName);
             String name = text.getText().toString();
-            productLoader.createProduct(name);
             dialogAdding.hide();
+            String result = productLoader.createProduct(name);
+            if (result != null)
+                buildElement(result);
         });
     }
 

@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.view.ViewGroup.MarginLayoutParams;
 
 import com.foodmanager.R;
 import com.foodmanager.recipes.loaders.ProductsLoader;
@@ -68,33 +69,37 @@ public class MyFridge extends AppCompatActivity {
 
         Button apply = dialogAdding.findViewById(R.id.applyName);
         apply.setOnClickListener((view) -> {
+            apply.setClickable(false);
             EditText text = dialogAdding.findViewById(R.id.productName);
             String name = text.getText().toString();
             dialogAdding.hide();
-            String result = productLoader.createProduct(name);
-            if (result != null)
-                buildElement(result);
+            String product = productLoader.load(name);
+            if (product != null)
+                buildElement(product);
         });
     }
 
-    /*
-        Show element
-    */
     private void buildElement(String name) {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams
                 (LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         linearLayout.setLayoutParams(layoutParams);
-        linearLayout.setGravity(Gravity.CENTER);
+        linearLayout.setGravity(Gravity.START);
+        MarginLayoutParams params = (MarginLayoutParams) linearLayout.getLayoutParams();
+        params.setMargins(45, 20, 45, 10);
+        linearLayout.setLayoutParams(params);
 
         TextView textView = new TextView(this);
-        textView.setBackgroundColor(0xffe8eaf6);
-        textView.setTextColor(0xff5c6bc0);
-        textView.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
+        name = name.substring(0, 1).toUpperCase() + name.substring(1);
         textView.setText(name);
+        textView.setTextSize(22);
+        LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(textView.getLayoutParams());
+        textParams.setMargins(3, 3, 3, 3);
+        textView.setLayoutParams(textParams);
 
         linearLayout.addView(textView);
-        listItem.addView(linearLayout);
+        linearLayout.setBackground(getDrawable(R.drawable.rectangle));
+        listItem.addView(linearLayout, 0);
     }
 }

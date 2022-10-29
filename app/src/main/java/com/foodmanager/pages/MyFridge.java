@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.view.ViewGroup.MarginLayoutParams;
 
 import com.foodmanager.R;
 import com.foodmanager.recipes.loaders.ProductsLoader;
@@ -43,7 +41,7 @@ public class MyFridge extends AppCompatActivity {
 
         final View buttonAdd = findViewById(R.id.addProduct);
         buttonAdd.setOnClickListener(view -> {
-            showMenu();
+            showDialog();
         });
     }
 
@@ -63,7 +61,7 @@ public class MyFridge extends AppCompatActivity {
         return builder.create();
     }
 
-    private void showMenu() {
+    private void showDialog() {
         dialogAdding.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogAdding.show();
 
@@ -80,26 +78,22 @@ public class MyFridge extends AppCompatActivity {
     }
 
     private void buildElement(String name) {
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams
-                (LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        linearLayout.setLayoutParams(layoutParams);
-        linearLayout.setGravity(Gravity.START);
-        MarginLayoutParams params = (MarginLayoutParams) linearLayout.getLayoutParams();
-        params.setMargins(45, 20, 45, 10);
-        linearLayout.setLayoutParams(params);
+        LayoutInflater inflater = getLayoutInflater();
+        LinearLayout viewProduct = (LinearLayout) inflater.
+                inflate(R.layout.product_for_fridge, null);
+        listItem.addView(viewProduct, 0);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) viewProduct.getLayoutParams();
+        params.setMargins(0,0,0,10);
+        viewProduct.setLayoutParams(params);
 
-        TextView textView = new TextView(this);
+        TextView textView = findViewById(R.id.nameProduct);
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
         textView.setText(name);
-        textView.setTextSize(22);
-        LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(textView.getLayoutParams());
-        textParams.setMargins(3, 3, 3, 3);
-        textView.setLayoutParams(textParams);
 
-        linearLayout.addView(textView);
-        linearLayout.setBackground(getDrawable(R.drawable.rectangle));
-        listItem.addView(linearLayout, 0);
+        View deleteButton = findViewById(R.id.deleteElement);
+        deleteButton.setOnClickListener(view -> {
+            viewProduct.removeAllViews();
+            listItem.removeViewInLayout(viewProduct);
+        });
     }
 }

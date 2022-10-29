@@ -2,21 +2,11 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:shape="oval">
-            <solid android:color="#1E1E1E" />
-            <padding android:left="80dp"
-                android:right="80dp"/>
-        </shape>
-     </item>
-    <item>
-        <shape
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:shape="line">
-            <stroke android:width="45dp"
-                android:color="#757575"/>
+            <stroke android:width="5dp"
+                android:color="@color/cross"/>
         </shape>
     </item>
 </layer-list>

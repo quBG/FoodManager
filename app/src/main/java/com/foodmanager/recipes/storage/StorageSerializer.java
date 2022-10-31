@@ -1,18 +1,23 @@
 package com.foodmanager.recipes.storage;
 
+import android.os.Environment;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class StorageSerializer extends Serializer {
     private ObjectOutputStream file;
     private String fileName;
-    private final String path = "C:\\Users\\Username\\Desktop\\";
+    private final String path;
+
+    public StorageSerializer(String serializationFileName) {
+        path = Environment.getDataDirectory().getAbsolutePath();
+        fileName = serializationFileName;
+    }
 
     @Override
     public String getFileName() {
@@ -56,7 +61,7 @@ public class StorageSerializer extends Serializer {
             }
         } catch (Exception exception) {
             exception.printStackTrace();
-            throw new NullPointerException("name is not set on serialization");
+            throw new NullPointerException("Name is not set on serialization");
         }
     }
 
@@ -70,7 +75,7 @@ public class StorageSerializer extends Serializer {
             }
         } catch (IOException exception) {
             exception.printStackTrace();
-            throw new NullPointerException("name is not set on serialization");
+            throw new NullPointerException("Name is not set on serialization");
         }
         return null;
     }

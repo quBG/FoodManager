@@ -12,4 +12,6 @@
     <color name="button_select_products">#DBDBDB</color>
     <color name="stroke_circle_add">#00AEAEAE</color>
     <color name="button_select_products_text">#464646</color>
+    <color name="rectangle">#F4F4F4</color>
+    <color name="stroke_rectangle">#cccccc</color>
 </resources>

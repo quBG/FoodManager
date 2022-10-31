@@ -23,6 +23,7 @@ public class ProductsLoader {
 
         if (array.equals("")) {
             Log.e("ProductsLoader", "The result is null, check the operation of the connector");
+            Log.e("ProductsLoader", "Check internet connection");
             throw new NullPointerException();
         }
 

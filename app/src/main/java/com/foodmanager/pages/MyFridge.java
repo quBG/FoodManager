@@ -21,6 +21,7 @@ import com.foodmanager.recipes.storage.Products;
 import com.foodmanager.recipes.storage.Serializer;
 import com.foodmanager.recipes.storage.StorageSerializer;
 
+import java.util.List;
 import java.util.Objects;
 
 public class MyFridge extends AppCompatActivity {
@@ -50,17 +51,28 @@ public class MyFridge extends AppCompatActivity {
             showDialog();
         });
 
-        serializer.deserialize();
+        readProducts();
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            serializer.serialize(storage.getProducts());
+            if (storage.getProducts() != null)
+                serializer.serialize(storage.getProducts(), this);
             this.finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void readProducts() {
+        if (serializer.deserialize(this) != null)
+            storage.setProducts((List<String>) serializer.deserialize(this));
+        if (storage.getProducts() != null) {
+            for (String name : storage.getProducts()) {
+                buildElement(name);
+            }
+        }
     }
 
     private void findRecipes() {
@@ -94,6 +106,8 @@ public class MyFridge extends AppCompatActivity {
     }
 
     private void buildElement(String name) {
+        if (name == null)
+            return;
         LayoutInflater inflater = getLayoutInflater();
         LinearLayout viewProduct = (LinearLayout) inflater.inflate(R.layout.product_for_fridge, null);
         listItem.addView(viewProduct, 0);

@@ -23,6 +23,10 @@ public class Products {
         products.add(name);
     }
 
+    public void setProducts(List<String> products) {
+        this.products = products;
+    }
+
     public List<String> getProducts() {
         return products;
     }
